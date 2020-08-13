@@ -1,6 +1,7 @@
 const path=require('path')
 const express=require('express')
  const app=express()
+ const port=process.env.PORT
  const hbs=require('hbs')
  const getforecast=require('./reuse/forecast.js')
  const getjiocode=require('./reuse/utils.js')
@@ -94,7 +95,7 @@ app.get('/help',(req,res)=>
 })
 
 
- app.listen(3000,()=>
+ app.listen(port,()=>
  {
-     console.log('Server is up')
+     console.log('Server is up'+port)
  })
